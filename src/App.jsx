@@ -64,11 +64,11 @@ function ImageWithFallback(props) {
 const cityGuideData = {
   London: {
     food: [
-      { name: "The Morgan Arms", category: "Gastropub", distance: "8–10 min walk from Airbnb", notes: "Cozy corner pub with good Sunday roast and local beer.", mapsQuery: "The Morgan Arms, 43 Morgan St, Bow, London" },
+      { name: "The Morgan Arms", category: "Gastropub", distance: "8–10 min walk from Airbnb", notes: "Cozy corner pub with good Sunday roast.", mapsQuery: "The Morgan Arms, 43 Morgan St, Bow, London" },
       { name: "Arepa & Co (Bow)", category: "Venezuelan", distance: "8–10 min walk from Airbnb", notes: "Arepas, plantain and cocktails by the canal.", mapsQuery: "Arepa & Co, 254 Paradise Row, London" },
       { name: "Greedy Cow", category: "Burgers & grill", distance: "15–18 min walk / short bus", notes: "Laid-back spot for burgers and comfort food.", mapsQuery: "Greedy Cow, 2 Grove Rd, London" },
       { name: "E Pellicci", category: "East End café", distance: "15–20 min walk", notes: "Classic London greasy spoon, great breakfast.", mapsQuery: "E Pellicci, 332 Bethnal Green Rd, London" },
-      { name: "Dishoom Shoreditch", category: "Indian", distance: "15–20 min by Tube", notes: "Bombay-style café; bacon naan & black daal are musts.", mapsQuery: "Dishoom Shoreditch, 7 Boundary St, London" },
+      { name: "Dishoom Shoreditch", category: "Indian", distance: "15–20 min by Tube", notes: "Bombay-style café; naan & black daal are musts.", mapsQuery: "Dishoom Shoreditch, 7 Boundary St, London" },
     ],
     activities: [
       { name: "Victoria Park", category: "Park / walks", distance: "10–15 min walk", notes: "Big green space with lakes, cafes and Sunday market.", mapsQuery: "Victoria Park, London" },
