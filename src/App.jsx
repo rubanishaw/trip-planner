@@ -1,7 +1,6 @@
 // --- trip planner version 04 ---
 
 import React, { useState, useMemo, useEffect } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // --- Images & QR Data ---
 
