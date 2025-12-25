@@ -1,6 +1,7 @@
 // --- trip planner version 04 ---
 
 import React, { useState, useMemo, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 // --- Images & QR Data ---
 
@@ -1838,6 +1839,7 @@ export default function TripApp({ showQRCodes = true }) {
           </section>
         </div>
       </div>
+      <Analytics />
     </div>
   );
 }
