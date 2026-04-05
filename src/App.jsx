@@ -186,13 +186,17 @@ const fetchWeatherForecast = async (cityDateRanges) => {
     cityDateRanges.map(async ({ city, startDate, endDate }) => {
       const meta = cityMeta[city];
       if (!meta) return [city, null];
+const todayISO = new Date().toISOString().slice(0, 10);
+const endISO = new Date(Date.now() + 13 * 24 * 60 * 60 * 1000)
+  .toISOString()
+  .slice(0, 10);
 
-      const url =
-        `https://api.open-meteo.com/v1/forecast?` +
-        `latitude=${meta.latitude}&longitude=${meta.longitude}` +
-        `&daily=weathercode,temperature_2m_max,temperature_2m_min` +
-        `&timezone=${encodeURIComponent(meta.timezone)}` +
-        `&start_date=${startDate}&end_date=${endDate}`;
+const url =
+  `https://api.open-meteo.com/v1/forecast?` +
+  `latitude=${meta.latitude}&longitude=${meta.longitude}` +
+  `&daily=weathercode,temperature_2m_max,temperature_2m_min` +
+  `&timezone=${encodeURIComponent(meta.timezone)}` +
+  `&start_date=${todayISO}&end_date=${endISO}`;
 
       try {
         const res = await fetch(url);
@@ -201,8 +205,8 @@ const fetchWeatherForecast = async (cityDateRanges) => {
         const daily = data.daily;
         if (!daily || !daily.time) return [city, null];
 
-        const start = new Date(`${startDate}T12:00:00`);
-        const end = new Date(`${endDate}T12:00:00`);
+        const start = new Date(`${todayISO}T12:00:00`);
+const end = new Date(`${endISO}T12:00:00`);
         const startMonth = start.toLocaleDateString("en-US", { month: "short" });
         const endMonth = end.toLocaleDateString("en-US", { month: "short" });
         const startDay = start.getDate();
